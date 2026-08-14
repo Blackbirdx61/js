@@ -1,0 +1,146 @@
+<HTML>
+<Head>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--- hide script from old browsers
+
+// The Offset and round technique used on this page is not a mistake. 
+// It is necessary to overcome a glitch in the how the IE was handling
+// the decimal math adding and extranious .00000004 figure for no apparent reason. 
+// Yes this make for ugly code but it works. trl 
+
+function TXIF(form) 
+{ 
+var working=0
+var LWorking=0
+var Freq=0
+var LBFreq=0
+
+working = (form.a1.value * 10000) - (form.b1.value * 10000)
+working = working + (140 *10000)
+
+Freq = Math.round(working)/10000 
+
+
+form.c1.value = Freq 
+
+}
+
+
+function RXIF(form) 
+{ 
+var working=0
+var LWorking=0
+var Freq=0
+var LBFreq=0
+
+working = (form.a2.value * 10000) - (form.b2.value * 10000)
+working = working + (140 *10000)
+
+Freq = Math.round(working)/10000 
+
+
+form.c2.value = Freq 
+
+}
+
+
+function add(form) {form.c1.value = (form.a1.value * 1) + (form.b1.value * 1)} 
+function subtract(form) {form.c2.value = (form.a2.value * 1) - (form.b2.value * 1)}
+function multiply(form) {form.c3.value = form.a3.value * form.b3.value}
+function divide(form) {form.c4.value = form.a4.value / form.b4.value}
+// end hiding contents from old browsers  -->
+</script>
+
+
+<Title> CLK C-Band Calculator sheet </title>
+<head>
+<Body>
+<table width=700>
+<tr><td>
+<Center> 
+<H2> Transponder to IF Formula Sheet. </H2></center>
+
+<P>
+The information contained below is meant to help you convert,
+RF Frequencies to IF Frequencies. This is assuming that you
+are working on a Non-Inverted C band Service. For an Inverted C band
+or LBand Service. Please refer to the 
+<a href="MTN_Freq.html" >MTN_Freq</a> &nbsp sheet linked to this page.  
+</P>
+</td></tr></table>
+<BR><BR>
+
+
+<Form>
+<table Border=0>
+<tr>
+<td valign=top>
+<P>To Calc the Center Frequency of a Modem for 
+a non inverting C-Band Service apply the following formula. </P>
+<P>
+<Pre>
+IF Center = 140 + (TXCF -XPCF)
+
+Example  JED.1
+TX RF:                6033.0800 <INPUT TYPE="text" NAME="a1" SIZE=9>
+Transponder Center:   6050.0000 <INPUT TYPE="text" NAME="b1" SIZE=9>
+                      _________ 
+Gives an IF FReq of    123.0800 <INPUT TYPE="text" NAME="c1" SIZE=9>
+<INPUT TYPE="BUTTON" VALUE="Calculate" ONCLICK="TXIF(this.form)">
+
+</pre>
+</td>
+<td width=25> &nbsp </td>
+<td valign=top>
+<P>
+To Calc the Center Frequency of a DeModulator for 
+a non inverting C-Band Service apply the following 
+formula. </P>
+<P>
+<Pre>
+IF Center = 140 + (RXCF -XPCF)
+
+Example  JED.1
+RX RF:                3836.2500 <INPUT TYPE="text" NAME="a2" SIZE=9>
+Transponder Center:   3825.0000 <INPUT TYPE="text" NAME="b2" SIZE=9>
+                      _________ 
+Gives an IF FReq of    151.2500 <INPUT TYPE="text" NAME="c2" SIZE=9>
+<INPUT TYPE="BUTTON" VALUE="Calculate" ONCLICK="RXIF(this.form)">
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</td>
+</tr></Table></Form>
+
+<a href="Satellite Transponder Plans/TSE - Intelsat 9's transponder frequency plan.mht"
+target="Top"> Intelsat 9 Birds </a> &nbsp &nbsp &nbsp 
+
+<a href="Satellite Transponder Plans/TSE - Intelsat 8's transponder frequency plan.mht"
+target="Top"> Intelsat 8 Birds </a> &nbsp &nbsp &nbsp 
+<a href="Satellite Transponder Plans/TSE - Intelsat 7A's transponder frequency plan.mht"
+target="Top"> Intelsat 7A Birds </a> &nbsp &nbsp &nbsp 
+<a href="Satellite Transponder Plans/TSE - Intelsat 6's transponder frequency plan.mht"
+target="Top"> Intelsat 6 Birds </a> &nbsp &nbsp &nbsp 
+
+
+
+
+
