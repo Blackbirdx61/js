@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="generator" CONTENT="NoteTab">
+<TITLE>*** My Slot Machine ***</TITLE>
+<link rel="stylesheet" href="slots.css">
+<script src="slots-window.js" defer></script>
+</HEAD>
+<body bgcolor=#99ff99>
+
+<!-- ═══ OUTER UI FRAME ═══ -->
+<Div id="main-frame" style="
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 980px;
+  height: 600px;
+  padding: 10px;
+  background-color: #20002e;
+  border: 2px solid #333;
+  box-sizing: border-box;
+">
+
+  <!-- Title -->
+  <Div style="position:relative; top:77.5;
+			  height=100px; left:35px;  " align=left>
+   <img src="img/frame/topboxB02.png" width=807 >
+   
+   
+  </Div>
+
+  <!-- ═══ REELS SECTION ═══ -->
+  <Div class="container" ID="img-pay" 
+    style="position:absolute;
+	 
+      top:  80px;
+      left: 140px;
+      display: flex;
+      gap: 12px;
+      z-index: 1;
+    width:750px; background-color:lightblue;">
+
+    
+    </div>
+
+    <!-- FRAME IMAGE -->
+    <span style="position:absolute; left:40px; top:185px; z-index:3;">
+		 <img src="img/frame/bbs_slots_pay02.png" id="img-Pay" 
+		 style="position:relative; left:50px; top:10; z-index:2;" width=714 height=489></span>
+		 
+	<span>	 
+	  <img src="img/frame/slots-formB61pay.png" id="Rframe" 
+	   style="position:relative; left:31px; top:50; z-index:2;"
+	  
+	  width=820 height=600 >
+    </span>
+
+  </Div>
+  <!-- ═══ END REELS SECTION ═══ -->
+
+  <!-- 2nd Tier below reels -->
+  <Div  id="msg-container" 
+		class="container"
+		style="position:relative; 
+          width: 675px;
+          left:82px; 
+          top:125px;		
+          height:35px;
+          background-color: #450062;
+          border: 0px solid #73AD21;">
+
+    <Div id="txtbox01"  
+      style="position:absolute; left: 65px; top: -5px; width:300px; height:35px;
+			 z-index:3;
+          box-sizing: border-box;
+		  		  font-size: 26px;
+		 color: aqua;">Bank = 200</div>
+		 
+	 <Div id="txtbox01"  
+      style="position:absolute; left: 235px; top: -5px; width:300px; height:35px;
+			 z-index:3;
+          box-sizing: border-box;
+		  		  font-size: 26px;
+		 color: aqua;">Bet: $5</div>
+
+    <div id="txtbox02" 
+      style="position:absolute; left: 440px; top: -3px; width:190px; height:75px; 
+           z-index:3;
+		  box-sizing: border-box;
+		  font-size: 26px;
+		 color: aqua;
+          border: 0px solid #73AD21">Good Luck!</div>
+	
+<!-- Spin button -->
+	<Div style="position:absolute; left:332px; top:-31px; width:87px; height:79px; border:none; background-color: transparent; z-index:3;">
+		<button id="spin-btn" type="button" onclick="spinAll()" 
+		style="background:transparent; border:none; padding:0; cursor:pointer;">
+		<img src="img/frame/ybutton.png" width=77 height=77>
+		</button>
+	</Div>
+
+
+  </div>
+
+  <Div id="txtbox03" style="position:relative; width:650px; left:175px; top:330px;"></div>
+
+</Div>
+<!-- ═══ END OUTER UI FRAME ═══ -->
+
+</BODY>
+</HTML>

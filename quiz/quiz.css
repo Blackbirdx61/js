@@ -1,0 +1,183 @@
+/* ── Study Quiz CSS ── */
+:root {
+  --primary:   #2E4057;
+  --accent:    #048A81;
+  --success:   #1D9E75;
+  --danger:    #D85A30;
+  --bg:        #F1F3F5;
+  --card:      #FFFFFF;
+  --border:    #DEE2E6;
+  --text:      #333333;
+  --muted:     #6C757D;
+  --radius:    8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.quiz-wrap {
+  width: 100%;
+  max-width: 680px;
+}
+
+/* ── Category buttons ── */
+.cat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.cat-btn {
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.cat-btn:hover { background: #e9ecef; }
+
+.cat-btn.active {
+  background: #e0f4f2;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Score bar ── */
+.score-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.sc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sc span {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text);
+  display: block;
+}
+
+/* ── Question card ── */
+.qcard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  min-height: 160px;
+}
+
+.qtag {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.qtext {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.6;
+  min-height: 60px;
+}
+
+/* ── Answer box ── */
+.abox {
+  background: #e8f8f3;
+  border: 1px solid #a8dcc8;
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  color: #0f6e56;
+  font-size: 15px;
+  line-height: 1.7;
+  display: none;
+}
+
+.abox.show { display: block; }
+
+.abox img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  margin-top: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  transition: background 0.15s, transform 0.1s;
+}
+
+button:hover { background: #e9ecef; }
+button:active { transform: scale(0.97); }
+
+.btn-correct {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.btn-partial {
+  border-color: #BA7517;
+  color: #BA7517;
+}
+
+.btn-wrong {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.btn-right { margin-left: auto; }
+
+.hide { display: none !important; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .score-bar { flex-wrap: wrap; }
+  .btn-right { margin-left: 0; }
+}

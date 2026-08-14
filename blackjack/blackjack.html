@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="generator" CONTENT="NoteTab">
+<TITLE>*** Classic BlackJack ***</TITLE>
+<link rel="stylesheet" href="mc.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { margin: 0; padding: 0; overflow: hidden; }
+</style>
+ <!-- style>img.halo-fix {  border: 0;  outline: 0; }   </style -->
+ <script src="bjackR.js" defer></script>
+        
+           
+          
+</HEAD>
+<body bgcolor=#99ff99 >
+
+<!-- Chip <a href="https://www.flaticon.com/free-icons/poker-chip" title="poker chip icons">Poker chip icons created by Magnific - Flaticon</a> -->
+
+<!-- ??? OUTER UI FRAME ??? -->
+<Div id="main-frame" class="container" style="
+  position: relative;
+  left: 0px;
+  top: 0px;
+   width: 999px;
+  height: 600px;
+  padding: 10px;
+  background-color: #20002e;
+  border: 2px solid #333;
+  box-sizing: border-box; " /><!-- background-color:lightblue;  -->
+
+  <!-- Title -->
+  <Div style="position:absolute; top:0; z-index:2;
+			 	
+			  height=600px; left:-1px;  " align=left>
+   <img src="img/BlackJackMS502.png" width=1000 height=875 -->
+   
+   
+  </Div>
+
+  
+   <Div class="container" ID="DealerField" 
+  style="position:relative;
+  top:300px; left:350px;
+  z-index:3;
+  width:300px; height:160px;">
+  <!-- Dealers Hand -->
+  <Div id="DealerCrd01" style="position:absolute; 
+	visibility:visible; 
+    left:10px; top:0px;
+    z-index:1;">
+    <img src="img/cards/bjdeck/bjd0.png" width=72 height=100>
+  </div>
+  <!-- Card 2 - offset left and up, on top -->
+  <Div id="DealerCrd02" style="position:absolute; 
+	visibility:visible; 
+    left:40px; top:10px;
+    z-index:2;">
+    <img src="img/cards/bjdeck/bjd1.png" width=72 height=100>
+  </div>
+    <Div id="DealerCrd03" style="position:absolute; 
+	visibility:hidden; 
+    left:70px; top:10px;
+    z-index:2;">
+    <img src="img/cards/bjdeck/bjd2.png" width=72 height=100>
+  </div>
+    <Div id="DealerCrd04" style="position:absolute; 
+	visibility:hidden;
+    left:100px; top:10px;
+    z-index:2;">
+    <img src="img/cards/bjdeck/bjd3.png" width=72 height=100>
+  </div>
+     <Div id="DealerCrd05" style="position:absolute;
+	visibility:hidden;	 
+    left:130px; top:10px;
+    z-index:2;">
+    <img src="img/cards/bjdeck/bjd4.png" width=72 height=100>
+  </div>
+     <Div id="DealerCrd06" style="position:absolute; 
+	 visibility:hidden;
+    left:160px; top:10px;
+    z-index:2;">
+    <img src="img/cards/bjdeck/bjd5.png" width=72 height=100>
+  </div>
+  </div>
+  <!---- Dealer Field --->
+  <!-- ??? The Field ??? -->
+  <Div class="container" ID="PlayerField" 
+  style="position:absolute;
+  top:610px; left:360px;
+  width:800px; height:160px;"> <!--   background-color:lightblue; -->
+
+  <!-- Card 1 - base position -->
+  <Div id="PlayerCrd01" style="position:absolute; 
+	visibility:visible;
+    left:0px; top:0px;
+    z-index:3;">
+    <img src="img/cards/bjdeck/bjd0.png" width=72 height=100>
+  </div>
+
+  <!-- Card 2 - offset left and up, on top -->
+  <Div id="PlayerCrd02" style="position:absolute; 
+	visibility:visible;
+    left:30px; top:10px;
+    z-index:3;">
+    <img src="img/cards/bjdeck/bjd1.png" width=72 height=100>
+	<!-- Hide/Reveal style="visibility:hidden;"  -->
+  </div>
+    <Div id="PlayerCrd03" style="position:absolute; 
+	visibility:hidden;
+    left:63px; top:10px;
+    z-index:3;">
+    <img src="img/cards/bjdeck/bjd2.png" width=72 height=100
+	>
+  </div>
+    <Div id="PlayerCrd04" style="position:absolute;
+	visibility:hidden;	
+    left:94px; top:10px;
+    z-index:3;">
+    <img  src="img/cards/bjdeck/bjd3.png" width=72 height=100>
+  </div>
+     <Div id="PlayerCrd05" style="position:absolute; 
+	 visibility:hidden;
+    left:127px; top:10px;
+    z-index:3;">
+    <img src="img/cards/bjdeck/bjd4.png" width=72 height=100>
+  </div>
+     <Div id="PlayerCrd06" style="position:absolute; 
+	 visibility:visible;
+    left:160px; top:10px;
+    z-index:3;">
+    <img src="img/cards/bjdeck/bjd5.png" width=72 height=100>
+  </div>
+ </div> 
+ 
+ <Div id="betcircle" style="position:absolute; 
+	 visibility:visible;
+    left:460px; top:550px;
+    z-index:2;">
+    <img id="betcircleimg" src="img/betcircle.png" width=60 height=60>
+	<span id="plrchips" style="position:absolute; 
+	 visibility:hidden; left:9px; top:7px; z-index:3;">
+	<img id="mychips" src="img/chip5B.png"> </span> 
+	<span id="betTxt" style="position:absolute; width:60px; Height:40;
+	color:white; font-size:16px;
+	 visibility:visible; left:63px; top:15px; z-index:3;">Place your Bet</span> 
+	
+	
+	</div>
+ 
+ 
+<div id="msgbox" style="position:absolute; left:650px; top:675px; z-index:2;">
+  <img id="msger" src="img/msgbox.png" style="visibility:visible; width:224px; height:76px;">
+  <span id="msgtxt" style="position:absolute; left:90px; top:25px; z-index:3; color:white; 
+		font-size:16px;">Ready to play Sir</span> </div>
+
+		
+	<Div class="container" ID="chips" style="position:absolute; left:680px; top:755px;  z-index:2;">
+		<span id="chip5" ><img src="img/chip5.png" ></span> 
+		<span id="chip10" >&nbsp; <img src="img/chip10.png" ></span> 
+		<span id="chip25" >&nbsp; <img src="img/chip25.png" ></span> 
+ </div>
+
+<div id="txtbox01" 	style="position:absolute; left:690px; top:805px; z-index:2; 
+					width:75; height:25; 
+					color:white; font-size:16px;" >Bank: $500</div>
+	
+	
+	
+	
+  <Div id="buttons" style="position:absolute; 
+    left:225px; top:750px;
+    z-index:2;">
+	
+ 
+
+<button id="btnHit" type="button" 
+   style="position:relative; top:0px; left:10px; z-index:2; background:transparent; border:none; outline:none; padding:0; cursor:pointer;">
+  <img src="img/hitbtn.png" 
+    style="display:block; width:98px; height:52px;">
+</button>
+
+<button id="btnNew" type="button" onclick="main()" 
+   style="position:absolute; top:0px; left:112px; z-index:2; background:transparent; border:none; outline:none; padding:0; cursor:pointer; visibility:visible;">
+  <img id="btnNewStand" src="img/newgame.png" 
+    style="display:block; width:98px; height:52px;">
+</button>
+
+<button id="btnStand" type="button" onclick="standbtnTest()" 
+   style="position:absolute; top:0px; left:112px; z-index:2; background:transparent; border:none; outline:none; padding:0; cursor:pointer; visibility:hidden;">
+  <img id="btnStand" src="img/standbtn.png" 
+    style="display:block; width:98px; height:52px;">
+</button>
+
+<button id="btnSplit" type="button" 
+   style="position:absolute; top:0px; left:213px; z-index:2; background:transparent; border:none; outline:none; padding:0; cursor:pointer;">
+  <img src="img/splitbtn.png" 
+    style="display:block; width:98px; height:52px;">
+</button>
+<button id="btnDouble" type="button" 
+   style="position:absolute; top:0px; left:315px; z-index:2; background:transparent; border:none; outline:none; padding:0; cursor:pointer;">
+  <img src="img/doublebtn.png" 
+    style="display:block; width:98px; height:52px;">
+</button>
+
+  
+ 
+
+</div>
+
+<!-- ??? END OUTER UI FRAME ??? -->
+
+
+</BODY>
+</HTML>

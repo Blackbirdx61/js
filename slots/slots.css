@@ -1,0 +1,104 @@
+/* ── SWAP YOUR SYMBOL SIZE HERE ── */
+:root {
+  --symbol-size: 175px;  /* width & height of each PNG frame */
+  --reel-gap: 12px;       /* gap between reels */
+  --window-padding: 16px; /* padding inside the window frame */
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/*body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #99ff99;
+} */
+
+/* ── WINDOW FRAME ── */
+#slot-window {
+  display: flex;
+  gap: var(--reel-gap);
+  padding: var(--window-padding);
+  background: #fff;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* top & bottom fade to emphasise the centre symbol */
+#slot-window::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.55) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(0,0,0,0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── SPIN BUTTON ── 
+#spin-btn {
+  display: block;
+  margin: 20px auto 0;
+    padding: 2px 2px;
+  font-size: 14px;
+  font-family: monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #99ff99;
+  color: #ccc;
+  border: 1px solid #555;
+  border-radius: 8px;
+  transition: background 0.15s, transform 0.1s;
+}
+#spin-btn:hover    { background: #333; }
+#spin-btn:active   { transform: scale(0.97); }
+#spin-btn:disabled { opacity: 0.4; cursor: default; transform: none; } */
+
+/* ── SINGLE REEL ── */
+.reel-viewport {
+  width: var(--symbol-size);
+  height: var(--symbol-size); /* show exactly 1 symbol tall */
+  overflow: hidden;
+  position: relative;
+  border-radius: 6px;
+  background: #111;
+}
+
+/* the scrolling strip */
+.reel-strip {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+/* each frame in the strip */
+.reel-strip img {
+  display: block;
+  width: var(--symbol-size);
+  height: var(--symbol-size);
+  object-fit: contain;
+  background: #333; /* placeholder tint before PNGs are swapped in */
+  flex-shrink: 0;
+}
+
+.links {
+    color: aqua;
+	text-decoration:none; 
+}
+.Links:hover {
+    color: lightgreen;
+    text-decoration: none;
+}

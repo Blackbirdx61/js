@@ -1,0 +1,8 @@
+img.halo-fix {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: block; /* Prevents tiny gaps or spacing beneath line-level images */
+    max-width: 100%; /* Ensures the image is responsive */
+    /* height: auto; */
+}
